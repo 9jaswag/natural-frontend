@@ -1,6 +1,18 @@
+{{#each table.columns as |column index|}}
+  <tr>
+    <td>
+      {{index}}
+    </td>
+    {{#each table.rows as |row|}}
+      <td>
+        <input type='text' class='form-control' />
+      </td>
+    {{/each}}
+  </tr>
+{{/each}}
 <tr>
   <td>
-    {{#bs-button type="primary"}}
+    {{#bs-button type="primary" onClick=(action "addColumn")}}
       Add column
     {{/bs-button}}
   </td>

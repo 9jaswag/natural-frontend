@@ -7,10 +7,14 @@ export default Component.extend({
   actions: {
     addRow() {
       let rowName = window.prompt();
-      this.get('store').createRecord('row', {
+      let row = this.get('store').createRecord('row', {
         table: this.table,
         name: rowName
       });
+      row.save();
+    },
+    deleteRow(id) {
+      this.get('store').findRecord('row', id).delete();
     }
   }
 });

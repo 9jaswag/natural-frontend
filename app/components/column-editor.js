@@ -6,9 +6,10 @@ export default Component.extend({
 
   actions: {
     addColumn() {
-      this.get('store').createRecord('column', {
+      let column = this.get('store').createRecord('column', {
         table: this.table
       });
+      column.save();
     }
   }
 });

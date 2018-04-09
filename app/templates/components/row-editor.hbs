@@ -3,7 +3,7 @@
     #
   </th>
   {{#each table.rows as |row|}}
-    <th>{{row.name}}</th>
+    <th>{{row.name}} {{bs-button onClick=(action "deleteRow" row.id) type="alert" icon="glyphicon glyphicon-trash"}}</th>
   {{/each}}
   <th>
     {{#bs-button type="primary" onClick=(action "addRow")}}
