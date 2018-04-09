@@ -7,17 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('projects', function() {
-    this.route('project', { path: ':project_id' }, function() {
-      this.route('databases');
-    })
-  });
-
-  this.route('databases', function() {
-    this.route('database', { path: ':databse_id' }, function() {
-      this.route('tables');
-    })
-  });
+  this.route('projects');
+  this.route('databases', { path: 'projects/:project_id/databses' });
+  this.route('tables', { path: 'databases/:database_id/tables' });
+  this.route('table', { path: 'tables/:table_id' });
 });
 
 export default Router;

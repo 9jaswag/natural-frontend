@@ -9,13 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      {{#each model as |databases|}}
+      {{#each model as |database|}}
         <tr>
           <td>
             {{database.name}}
           </td>
           <td>
-            {{#link-to 'databases.database.tables' table.id class='btn btn-primary'}}
+            {{#link-to 'tables' database.id class='btn btn-primary'}}
               Tables
             {{/link-to}}
           </td>

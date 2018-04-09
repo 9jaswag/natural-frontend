@@ -1,5 +1,5 @@
 <div class='container push-down'>
-  <h1>Projects</h1>
+  <h1>Tables</h1>
 
   <table class='table'>
     <thead>
@@ -9,14 +9,14 @@
       </tr>
     </thead>
     <tbody>
-      {{#each model as |project|}}
+      {{#each model as |table|}}
         <tr>
           <td>
-            {{project.name}}
+            {{table.name}}
           </td>
           <td>
-            {{#link-to 'databases' project.id class='btn btn-primary'}}
-              Databases
+            {{#link-to 'table' table.id class='btn btn-primary'}}
+              Show
             {{/link-to}}
           </td>
         </tr>

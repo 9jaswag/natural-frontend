@@ -1,0 +1,13 @@
+<tr>
+  <th>
+    #
+  </th>
+  {{#each table.rows as |row|}}
+    <th>{{row.name}}</th>
+  {{/each}}
+  <th>
+    {{#bs-button type="primary" onClick=(action "addRow")}}
+      Add field
+    {{/bs-button}}
+  </th>
+</tr>
