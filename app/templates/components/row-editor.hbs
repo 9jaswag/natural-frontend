@@ -1,13 +1,25 @@
+{{#each table.rows as |row index|}}
+  <tr>
+    <td>
+      {{humanized-index index}}
+    </td>
+    {{#each table.columns as |column|}}
+      <td>
+        <input type='text' class='form-control' />
+      </td>
+    {{/each}}
+    <td>
+      {{#bs-button onClick=(action "deleteRow" row.id) type="danger"}}
+        Delete
+      {{/bs-button}}
+    </td>
+  </tr>
+{{/each}}
 <tr>
-  <th>
-    #
-  </th>
-  {{#each table.rows as |row|}}
-    <th>{{row.name}} {{bs-button onClick=(action "deleteRow" row.id) type="alert" icon="glyphicon glyphicon-trash"}}</th>
-  {{/each}}
-  <th>
+  <td>
     {{#bs-button type="primary" onClick=(action "addRow")}}
-      Add field
+      Add row
     {{/bs-button}}
-  </th>
+  </td>
+  <td colspan=2></td>
 </tr>

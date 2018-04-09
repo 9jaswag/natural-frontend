@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 
 export function humanizedIndex(index) {
-  return index + 1;
+  return (parseInt(index) + 1).toString();
 }
 
 export default helper(humanizedIndex);

@@ -6,15 +6,15 @@ export default Component.extend({
 
   actions: {
     addRow() {
-      let rowName = window.prompt();
       let row = this.get('store').createRecord('row', {
-        table: this.table,
-        name: rowName
+        table: this.table
       });
       row.save();
     },
     deleteRow(id) {
-      this.get('store').findRecord('row', id).delete();
+      this.get('store').findRecord('row', id).then(function(record) {
+        record.destroyRecord();
+      });
     }
   }
 });

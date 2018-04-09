@@ -6,10 +6,17 @@ export default Component.extend({
 
   actions: {
     addColumn() {
-      let column = this.get('store').createRecord('column', {
-        table: this.table
+      let rowName = window.prompt();
+      let row = this.get('store').createRecord('column', {
+        table: this.table,
+        name: rowName
       });
-      column.save();
+      row.save();
+    },
+    deleteColumn(id) {
+      this.get('store').findRecord('column', id).then(function(record) {
+        record.destroyRecord();
+      });
     }
   }
 });
