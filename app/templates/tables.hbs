@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each model as |table|}}
+      {{#each model.tables as |table|}}
         <tr>
           <td>
             {{table.name}}
@@ -24,7 +24,13 @@
     </tbody>
   </table>
 
-  {{#bs-button onClick=(action 'transitionBack') class='float-right'}}
-    Back
-  {{/bs-button}}
+  <div class='float-right'>
+    {{#bs-button type="primary" onClick=(action "addTable")}}
+      Add table
+    {{/bs-button}}
+
+    {{#bs-button onClick=(action 'transitionBack')}}
+      Back
+    {{/bs-button}}
+  </div>
 </div>

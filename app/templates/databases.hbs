@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each model as |database|}}
+      {{#each model.databases as |database|}}
         <tr>
           <td>
             {{database.name}}
@@ -23,8 +23,13 @@
       {{/each}}
     </tbody>
   </table>
+  <div class='float-right'>
+    {{#bs-button type="primary" onClick=(action "addDatabase")}}
+      Add database
+    {{/bs-button}}
 
-  {{#bs-button onClick=(action 'transitionBack') class='float-right'}}
-    Back
-  {{/bs-button}}
+    {{#bs-button onClick=(action 'transitionBack')}}
+      Back
+    {{/bs-button}}
+  </div>
 </div>
