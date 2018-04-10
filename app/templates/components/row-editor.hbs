@@ -1,11 +1,11 @@
-{{#each table.rows as |row index|}}
+{{#each table.rows as |row|}}
   <tr>
     <td>
-      {{humanized-index index}}
+      {{row.id}}
     </td>
     {{#each table.columns as |column|}}
       <td>
-        <input type='text' class='form-control' />
+        {{row-value-editor row=row column=column}}
       </td>
     {{/each}}
     <td>
