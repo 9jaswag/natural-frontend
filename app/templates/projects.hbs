@@ -18,6 +18,9 @@
             {{#link-to 'databases' project.id class='btn btn-primary'}}
               Databases
             {{/link-to}}
+            {{#bs-button type="danger" onClick=(action "deleteProject" project.id) class='push-sm-left'}}
+              Delete
+            {{/bs-button}}
           </td>
         </tr>
       {{/each}}

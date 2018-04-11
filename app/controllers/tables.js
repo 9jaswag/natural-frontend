@@ -12,7 +12,7 @@ export default Controller.extend({
       });
       table.save();
     },
-    deleteDatabase(id) {
+    deleteTable(id) {
       this.get('store').findRecord('table', id).then(function(record) {
         record.destroyRecord();
       });
