@@ -7,4 +7,12 @@
   margin-left: 10px;
 }
 
+.quarter-width {
+  width: 25% !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
 @import "ember-bootstrap/bootstrap";

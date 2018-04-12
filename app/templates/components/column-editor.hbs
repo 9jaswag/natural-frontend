@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Copyright (C) Manuel Arno Korfmann - All Rights Reserved
 Unauthorized copying of this file, or parts of this file, via any medium is strictly prohibited
 Proprietary and confidential
@@ -15,6 +15,11 @@ Written by Manuel Arno Korfmann <manu@korfmann.info>, April 2018
       <span>
         {{column.name}}
       </span>
+      <select type='select' class='form-control quarter-width inline-block push-sm-left'>
+        <option value='1'>VarChar(255)</option>
+        <option value='2'>Integer</option>
+        <option value='3'>Association</option>
+      </select>
       {{#bs-button onClick=(action "deleteColumn" column.id) type="danger push-sm-left"}}
         Delete
       {{/bs-button}}

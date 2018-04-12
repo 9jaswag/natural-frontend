@@ -29,6 +29,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.apiHost = 'localhost:3000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -49,6 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.apiHost = '195.201.43.71'
     // here you can enable a production-specific feature
   }
 

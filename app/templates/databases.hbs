@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Copyright (C) Manuel Arno Korfmann - All Rights Reserved
 Unauthorized copying of this file, or parts of this file, via any medium is strictly prohibited
 Proprietary and confidential
@@ -13,7 +13,8 @@ Written by Manuel Arno Korfmann <manu@korfmann.info>, April 2018
     <thead>
       <tr>
         <th>Name</th>
-        <th>Query URL (POST Request)</th>
+        <th width="20%">Query URL (POST Request) - Form data "sql": {SQL query}</th>
+        <th width="20%">Query response URL (GET Request)</th>
         <th></th>
       </tr>
     </thead>
@@ -24,7 +25,10 @@ Written by Manuel Arno Korfmann <manu@korfmann.info>, April 2018
             {{database.name}}
           </td>
           <td>
-            http://localhost:3000/databases/{{database.id}}/queries
+            http://195.201.43.71/databases/{{database.id}}/queries
+          </td>
+          <td>
+            http://195.201.43.71/databases/{{database.id}}/queries/{query id (returned by query creation resource)}
           </td>
           <td>
             {{#link-to 'tables' database.id class='btn btn-primary'}}
