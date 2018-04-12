@@ -39,6 +39,10 @@ export default Component.extend({
     }
   },
   update() {
-    this.get('rowValue').save();
+    this.get('rowValue').save().then(() => {
+      Ember.run.later(() => {
+        this.row.reload();
+      }, 100);
+    });
   }
 });
