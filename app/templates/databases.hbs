@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Query URL (POST Request)</th>
         <th></th>
       </tr>
     </thead>
@@ -13,6 +14,9 @@
         <tr>
           <td>
             {{database.name}}
+          </td>
+          <td>
+            http://localhost:3000/databases/{{database.id}}/queries
           </td>
           <td>
             {{#link-to 'tables' database.id class='btn btn-primary'}}
