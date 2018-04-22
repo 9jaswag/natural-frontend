@@ -7,6 +7,9 @@ import config from './config/environment';
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
+  customEvents: {
+    paste: 'paste'
+  },
   Resolver
 });
 
