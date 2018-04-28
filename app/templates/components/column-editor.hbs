@@ -8,11 +8,11 @@
       <span>
         {{column.name}}
       </span>
-      <select type='select' class='form-control quarter-width inline-block push-sm-left'>
+      <!-- <select type='select' class='form-control quarter-width inline-block push-sm-left'>
         <option value='1'>VarChar(255)</option>
         <option value='2'>Integer</option>
         <option value='3'>Association</option>
-      </select>
+      </select> -->
       {{#bs-button onClick=(action "deleteColumn" column.id) type="danger push-sm-left"}}
         Delete
       {{/bs-button}}
