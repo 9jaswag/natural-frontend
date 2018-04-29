@@ -7,5 +7,13 @@ export default DS.JSONAPIAdapter.extend({
 
   pathForType: function(type) {
     return Ember.String.underscore(pluralize(type));
-  }
+  },
+
+  authentication: Ember.inject.service(),
+
+  headers: Ember.computed('authManager.accessToken', function() {
+    return {
+      "Authentication": `${this.get("authentication.accessToken")}`
+    };
+  })
 });
