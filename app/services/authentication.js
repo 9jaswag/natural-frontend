@@ -14,24 +14,25 @@ export default Ember.Service.extend({
       url: ENV.apiHost + "/token",
       data: { email: email, password: password }
     }).then((result) => {
-      console.log(result);
       this.set('accessToken', result.token);
-      // let cookieService = this.get('cookies');
-      // cookieService.write('accessToken', result.token);
+
+      let cookieService = this.get('cookies');
+      cookieService.write('accessToken', result.token);
     });
+  },
+
+  loadFromCookie() {
+    let cookieService = this.get('cookies');
+    let token = cookieService.read('accessToken');
+    this.set('accessToken', token);
   },
 
   invalidate() {
     this.set('accessToken', null);
-    // let cookieService = this.get('cookies');
-    // cookieService.write('accessToken', null);
+
+    let cookieService = this.get('cookies');
+    cookieService.write('accessToken', null);
   },
 
   isAuthenticated: Ember.computed.bool('accessToken')
-  // isAuthenticated: computed(function() {
-  //   let cookieService = this.get('cookies');
-  //   console.log(cookieService.read('accessToken'));
-  //   console.log(!!cookieService.read('accessToken'))
-  //   return !!cookieService.read('accessToken');
-  // })
 });
