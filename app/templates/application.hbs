@@ -1,1 +1,9 @@
-{{outlet}}
+<div class='{{if fullscreen 'container-fluid' 'container push-down'}}'>
+  {{outlet}}
+
+  <footer class='push-down-xl'>
+    {{#if authentication.isAuthenticated}}
+      <a href='#' {{action "logOut"}} class='float-right'>Log out</a>
+    {{/if}}
+  </footer>
+</div>

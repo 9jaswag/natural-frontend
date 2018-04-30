@@ -1,0 +1,25 @@
+<h4>How to query {{database.name}} Database programatically</h4>
+<p>
+  Use the following url to query the database:
+  <br />
+  <br />
+
+  <input class='form-control' value='https://api.natural-db.com/databases/{{database.id}}/queries' disabled/>
+  <br />
+  <!-- <ol>
+    <li>Synchronous, providing an instant response.</li>
+    <li>Asynchronous, providing a query id, which allows for obtaining the result after the query has run. Provide the 'async' url parameter with value '1'.</li>
+  </ol>
+
+  <br />
+  <input class='form-control' value='https://api.natural-db.com/databases/{{database.id}}/queries/(query-id)' disabled/>
+  <br /> -->
+
+  Provide the 'Authentication' header with the following value to access this database:
+  <br />
+  <br />
+
+  <input value='{{database.project.apiToken}}' disabled class='form-control'/>
+  <br />
+  The actual SQL query will be passed via the "sql" form-data parameter in the body of the post request.
+</p>
