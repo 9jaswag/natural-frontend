@@ -1,7 +1,9 @@
-<div class='container push-down'>
+<div class='{{if fullscreen 'container-fluid' 'container push-down'}}'>
   {{outlet}}
 
   <footer class='push-down'>
-    {{#link-to logOut class='float-right'}}Log out{{/link-to}}
+    {{#if authentication.isAuthenticated}}
+      {{#bs-button onClick=(action 'logOut') class='float-right'}}Log out{{/bs-button}}
+    {{/if}}
   </footer>
 </div>

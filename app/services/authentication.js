@@ -2,8 +2,11 @@ import ENV from "../config/environment";
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
+
+// TODO: make cookie authentication work (computed property is shit, when used in combination with cookies)
 export default Ember.Service.extend({
   cookies: service(),
+  accessToken: null,
 
   authenticate(email, password) {
     return Ember.$.ajax({
@@ -11,20 +14,24 @@ export default Ember.Service.extend({
       url: ENV.apiHost + "/token",
       data: { email: email, password: password }
     }).then((result) => {
-      let cookieService = this.get('cookies');
-      cookieService.write('accessToken', result.token);
+      console.log(result);
+      this.set('accessToken', result.token);
+      // let cookieService = this.get('cookies');
+      // cookieService.write('accessToken', result.token);
     });
   },
 
   invalidate() {
-    alert('test');
-    let cookieService = this.get('cookies');
-    cookieService.write('accessToken', null);
+    this.set('accessToken', null);
+    // let cookieService = this.get('cookies');
+    // cookieService.write('accessToken', null);
   },
 
-  isAuthenticated: computed(function() {
-    let cookieService = this.get('cookies');
-    return !!cookieService.read('accessToken');
-  })
-
+  isAuthenticated: Ember.computed.bool('accessToken')
+  // isAuthenticated: computed(function() {
+  //   let cookieService = this.get('cookies');
+  //   console.log(cookieService.read('accessToken'));
+  //   console.log(!!cookieService.read('accessToken'))
+  //   return !!cookieService.read('accessToken');
+  // })
 });
