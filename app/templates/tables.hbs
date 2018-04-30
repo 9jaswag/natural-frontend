@@ -1,37 +1,41 @@
 
-<h1>Tables</h1>
+{{api-usage-documentation database=model.database}}
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th colspan='3'>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.tables as |table|}}
+<div class='push-down'>
+  <h1>Tables</h1>
+
+  <table class='table'>
+    <thead>
       <tr>
-        <td>
-          <span>{{table.name}}</span>
-        </td>
-        <td>
-          {{#link-to 'table' table.id class='btn btn-primary'}}
-            Show
-          {{/link-to}}
-          {{#bs-button type="danger" onClick=(action "deleteTable" table.id) class='push-sm-left'}}
-            Delete
-          {{/bs-button}}
-        </td>
+        <th colspan='3'>Name</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each model.tables as |table|}}
+        <tr>
+          <td>
+            <span>{{table.name}}</span>
+          </td>
+          <td>
+            {{#link-to 'table' table.id class='btn btn-primary'}}
+              Show
+            {{/link-to}}
+            {{#bs-button type="danger" onClick=(action "deleteTable" table.id) class='push-sm-left'}}
+              Delete
+            {{/bs-button}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
-<div class='float-right'>
-  {{#bs-button type="primary" onClick=(action "addTable")}}
-    Add table
-  {{/bs-button}}
+  <div class='float-right'>
+    {{#bs-button type="primary" onClick=(action "addTable")}}
+      Add table
+    {{/bs-button}}
 
-  {{#bs-button onClick=(action 'transitionBack')}}
-    Back
-  {{/bs-button}}
+    {{#bs-button onClick=(action 'transitionBack')}}
+      Back
+    {{/bs-button}}
+  </div>
 </div>
