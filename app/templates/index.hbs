@@ -1,17 +1,15 @@
-<div class='container push-down'>
-  <h1>NaturalDB</h1>
+<h1>NaturalDB</h1>
 
-  <p>Welcome to NaturalDB. Design databases visually and query them programatically using a simple
-    SQL interface.
-  </p>
+<p>Welcome to NaturalDB. Design databases visually and query them programatically using a simple
+  SQL interface.
+</p>
 
-  {{#if model.isAuthenticated}}
-    {{#link-to 'projects' class='btn btn-primary'}}
-      Projects
-    {{/link-to}}
-  {{else}}
-    {{#link-to 'authenticate' class='btn btn-primary'}}
-      Register or Login
-    {{/link-to}}
-  {{/if}}
-</div>
+{{#if model.isAuthenticated}}
+  {{#link-to 'projects' class='btn btn-primary'}}
+    Projects
+  {{/link-to}}
+{{else}}
+  {{#link-to 'authenticate' class='btn btn-primary'}}
+    Register or Login
+  {{/link-to}}
+{{/if}}

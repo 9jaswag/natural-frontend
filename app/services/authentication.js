@@ -1,8 +1,9 @@
 import ENV from "../config/environment";
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Ember.Service.extend({
-
-  accessToken: null,
+  cookies: service(),
 
   authenticate(email, password) {
     return Ember.$.ajax({
@@ -10,14 +11,20 @@ export default Ember.Service.extend({
       url: ENV.apiHost + "/token",
       data: { email: email, password: password }
     }).then((result) => {
-      this.set('accessToken', result.token);
+      let cookieService = this.get('cookies');
+      cookieService.write('accessToken', result.token);
     });
   },
 
   invalidate() {
-    this.set('accessToken', null);
+    alert('test');
+    let cookieService = this.get('cookies');
+    cookieService.write('accessToken', null);
   },
 
-  isAuthenticated: Ember.computed.bool('accessToken')
+  isAuthenticated: computed(function() {
+    let cookieService = this.get('cookies');
+    return !!cookieService.read('accessToken');
+  })
 
 });
