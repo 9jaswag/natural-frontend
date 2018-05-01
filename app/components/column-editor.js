@@ -12,7 +12,10 @@ export default Component.extend({
         table: this.table,
         name: rowName
       });
-      row.save();
+      row.save()
+      .catch(()=>{
+        row.destroyRecord();
+      });
     },
     deleteColumn(id) {
       this.get('store').findRecord('column', id).then(function(record) {
