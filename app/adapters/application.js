@@ -13,6 +13,18 @@ export default DS.JSONAPIAdapter.extend({
     return Ember.String.underscore(pluralize(type));
   },
 
+  handleResponse(status, headers, payload, requestData) {
+    this.ensureResponseAuthenticated(status, headers, payload, requestData);
+    return this._super(...arguments);
+  },
+
+  ensureResponseAuthenticated(status/* ,headers, payload, requestData */) {
+    if (status === 403 && this.get('authentication.isAuthenticated')) {
+      this.get('authentication').invalidate();
+    }
+  },
+
+
   headers: Ember.computed('authentication.accessToken', function() {
     return {
       "Authentication": `${this.get('cookies').read('accessToken')}`
