@@ -9,11 +9,24 @@
         {{column.name}}
       </span>
 
-      {{select-light value=column.type options=columnTypes change=(action 'updateColumnType' column) class='form-control quarter-width inline-block push-sm-left'}}
 
-      {{#bs-button onClick=(action "deleteColumn" column.id) type="danger push-sm-left"}}
+      {{#bs-button onClick=(action "deleteColumn" column.id) type="danger push-left-sm"}}
         Delete
       {{/bs-button}}
+
+      {{#bs-dropdown class='inline-block push-left-sm' as |dd|}}
+        {{#dd.toggle}}{{svg-jar "tools" class="octicon"}}
+
+<span class="caret"></span>{{/dd.toggle}}
+        {{#dd.menu as |ddm|}}
+          <div class="px-3 py-3">
+            <div class='form-group'>
+              <label>Type</label>
+              {{select-light value=column.type options=columnTypes change=(action 'updateColumnType' column) class='form-control'}}
+            </div>
+          </div>
+        {{/dd.menu}}
+      {{/bs-dropdown}}
     </th>
   {{/each}}
   <th>

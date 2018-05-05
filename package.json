@@ -41,12 +41,15 @@
     "ember-inflector": "^2.2.0",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-octicons": "^0.9.0",
     "ember-resolver": "^4.0.0",
     "ember-select-light": "^1.2.0",
     "ember-source": "~3.1.0",
+    "ember-svg-jar": "^1.1.1",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "octicons": "^7.2.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
