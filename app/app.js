@@ -8,7 +8,7 @@ const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   customEvents: {
-    paste: 'paste'
+    input: 'input'
   },
   Resolver
 });

@@ -36,7 +36,7 @@ export default Component.extend({
   store: Ember.inject.service('store'),
   actions: {
     triggerUpdate() {
-      Ember.run.debounce(this, this.update, 1000);
+      Ember.run.debounce(this, this.update, 250);
     }
   },
   update() {
