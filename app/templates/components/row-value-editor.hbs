@@ -1,1 +1,7 @@
-{{input input=(action "triggerUpdate") value=rowValue.value type='text' class='form-control'}}
+{{input input=(action "triggerUpdate") value=rowValue.value type='text' class='form-control inline-block width-85-percent'}}
+
+<span class='inline-block push-left-sm'>
+  {{#link-to 'table.row-value' rowValue.id}}
+    {{svg-jar "screen-full" class="octicon"}}
+  {{/link-to}}
+</span>
