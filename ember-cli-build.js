@@ -14,6 +14,10 @@ module.exports = function(defaults) {
         'node_modules/octicons/build/svg'
       ]
     },
+    codemirror: {
+      modes: ['ruby'],
+      keyMaps: ['vim']
+    },
     'ember-bootstrap': {
       'bootstrapVersion': 4,
       'importBootstrapFont': false,

@@ -20,6 +20,9 @@
             {{#link-to 'table' table.id class='btn btn-primary'}}
               Show
             {{/link-to}}
+            {{#link-to 'functions' table.id class='btn btn-secondary push-left-sm'}}
+              Functions
+            {{/link-to}}
             {{#bs-button type="danger" onClick=(action "deleteTable" table.id) class='push-left-sm'}}
               Delete
             {{/bs-button}}

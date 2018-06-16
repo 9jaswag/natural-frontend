@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('databases', { path: 'projects/:project_id/databases' });
   this.route('tables', { path: 'databases/:database_id/tables' });
   this.route('table', { path: 'tables/:table_id' });
+  this.route('functions', { path: 'tables/:table_id/functions' });
+  this.route('function', { path: 'functions/:function_id' });
   this.route('authenticate');
 });
 

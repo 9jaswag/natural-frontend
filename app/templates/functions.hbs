@@ -1,0 +1,30 @@
+<div class='push-down'>
+  <h1>Functions</h1>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th colspan='1'>Name</th>
+        <th colspan='1'>Type</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.functions as |function|}}
+        <tr>
+          <td>
+            <span>{{function.name}}</span>
+          </td>
+          <td>
+            <span>{{function.type}}</span>
+          </td>
+          <td>
+            {{#link-to 'function' function.id class='btn btn-primary'}}
+              Show
+            {{/link-to}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
