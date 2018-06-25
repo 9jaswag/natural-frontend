@@ -1,5 +1,29 @@
 @import "ember-bootstrap/bootstrap";
 
+.redesign {
+  body {
+    background-color: $blue;
+    color: white;
+
+    .btn {
+      background-color: $orange;
+    }
+  }
+
+  footer {
+    padding: 20px;
+    background-color: $indigo;
+
+    .btn {
+      background-color: white;
+    }
+
+    .simple-link {
+      color: white;
+    }
+  }
+}
+
 .push-down {
   margin-top: 70px;
 }
