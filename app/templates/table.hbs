@@ -3,10 +3,8 @@
     {{column-editor table=model}}
   </thead>
   <tbody>
-    {{row-editor table=model}}
+    {{outlet}}
   </tbody>
 </table>
 
-{{#bs-button onClick=(action 'transitionBack') class='float-right'}}
-  Back
-{{/bs-button}}
+{{#bs-button onClick=(action 'transitionBack') class='float-right'}} Back {{/bs-button}}

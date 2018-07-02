@@ -1,26 +1,21 @@
-
-{{#each table.rows as |row|}}
-  <tr>
-    <td>
-      {{row.dbId}}
-    </td>
-    {{#each table.columns as |column|}}
-      <td>
-        {{row-value-editor row=row column=column}}
-      </td>
-    {{/each}}
-    <td>
-      {{#bs-button onClick=(action "deleteRow" row.id) type="danger"}}
-        Delete
-      {{/bs-button}}
-    </td>
-  </tr>
+{{!-- {{#each table.rows as |row|}}
+<tr>
+  <td>
+    {{row.dbId}}
+  </td>
+  {{#each table.columns as |column|}}
+  <td>
+    {{row-value-editor row=row column=column}}
+  </td>
+  {{/each}}
+  <td>
+    {{#bs-button onClick=(action "deleteRow" row.id) type="danger"}} Delete {{/bs-button}}
+  </td>
+</tr>
 {{/each}}
 <tr>
   <td>
-    {{#bs-button type="primary" onClick=(action "addRow")}}
-      Add row
-    {{/bs-button}}
+    {{#bs-button type="primary" onClick=(action "addRow")}} Add row {{/bs-button}}
   </td>
   <td colspan={{plus-one table.columns.length}}></td>
-</tr>
+</tr> --}}
